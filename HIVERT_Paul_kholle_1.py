@@ -121,9 +121,7 @@ elif args.t:
     Get_rows()
     Sort_list()
     sys.stdout.write('sorted\n'+ str(Sort_list()))
-    pass
 
 elif args.desc:
     Get_rows()
     sys.stdout.write('sorted in reverse order\n'+str(Sort_list_desc()))
-    pass
