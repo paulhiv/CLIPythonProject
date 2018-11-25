@@ -4,7 +4,7 @@ import sys
 import argparse
 import csv
 
-# varriables
+# define varriables
 parser = argparse.ArgumentParser()
 file_csv ='list.csv'
 array = []
@@ -53,11 +53,11 @@ def Write_row(entry):
             except Exception as e:
                 sys.stdout.write(str(e)+'\n')
 
-def Sort_list():
+def Get_sorted_list():
     rows = [int(row) for row in array]
     return sorted(rows, key=int)
 
-def Sort_list_desc():
+def Get_sorted_list_desc():
     rows = [int(row) for row in array]
     return sorted(rows, key=int, reverse=True)
 
@@ -119,9 +119,8 @@ elif args.sum:
 
 elif args.t:
     Get_rows()
-    Sort_list()
-    sys.stdout.write('sorted\n'+ str(Sort_list()))
+    sys.stdout.write('sorted\n'+ str(Get_sorted_list()))
 
 elif args.desc:
     Get_rows()
-    sys.stdout.write('sorted in reverse order\n'+str(Sort_list_desc()))
+    sys.stdout.write('sorted in reverse order\n'+str(Get_sorted_list_desc()))
